@@ -9,8 +9,10 @@ export default class ProductItem extends Component {
         <img src={shoes.image} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{shoes.name}</h5>
-          <p className="card-text">{shoes.description}</p>
-          <a href="#" className="btn btn-primary">View Detail</a>
+          <p className="card-text">{shoes.shortDescription}</p>
+          <button onClick={() => {
+            this.props.viewDetail(shoes);
+          }} className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View Detail</button>
         </div>
       </div>
     )
