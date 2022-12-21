@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ProductList from './ProductList';
 
 export default class ShoesStore extends Component {
 
@@ -125,21 +126,6 @@ export default class ShoesStore extends Component {
     } 
   ];
 
-  renderShoes = () => {
-    return this.listShoes.map((shoes) => {
-      return  <div className="col-4">
-                <div className="card">
-                  <img src={shoes.image} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">{shoes.name}</h5>
-                    <p className="card-text">{shoes.description}</p>
-                    <a href="#" className="btn btn-primary">View Detail</a>
-                  </div>
-                </div>
-              </div>
-    });
-  }
-
   render() {
     return (
       <div className='container py-5'>
@@ -163,11 +149,7 @@ export default class ShoesStore extends Component {
             {/* items */}
             <div className="col-9">
               <h1>Shoes Shop</h1>
-              <div className="row">
-                {this.renderShoes()}
-
-              </div>
-
+              <ProductList listShoes={this.listShoes}/>
             </div>
           </div>
 
