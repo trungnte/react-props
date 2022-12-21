@@ -6,7 +6,7 @@ export default class ProductList extends Component {
   renderShoesList = () => {
     return this.props.listShoes.map((shoesMap) => {
       return  <div className="col-4 my-3" key={shoesMap.id}>
-                <ProductItem shoes={shoesMap}/>
+                <ProductItem shoes={shoesMap} viewDetail={this.props.viewDetail}/>
               </div>
     });
   }
